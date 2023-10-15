@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Stock Information</h2>
+
+<form method="POST">
+  <label for="symbol">Enter a stock symbol:</label><br>
+  <input type="text" id="symbol" name="symbol" value="">
+  <input type="submit" value="Submit">
+</form>
+
+{% if error %}
+    <p>{{ error }}</p>
+{% endif %}
+
+{% if data %}
+    <p>{{ data.time }}</p>
+    <h3>{{ data.name }} ({{ data.symbol }})</h3>
+    <p>
+        {{ data.price }} {{ data.value_change }} ({{ data.percent_change }})
+    </p>
+{% endif %}
+
+</body>
+</html>
